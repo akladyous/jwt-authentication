@@ -1,70 +1,151 @@
-# Getting Started with Create React App
+# JWT Authentication - Full Stack Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![JWT Authentication](./jwt-authentication.webp)
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+This is a **full-stack authentication project** built from the ground up using **plain JavaScript** and modern web technologies. The project implements a complete, secure, and efficient authentication solution entirely from scratch, demonstrating best practices for building production-ready authentication systems.
 
-### `npm start`
+### Project Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This application provides a comprehensive authentication system featuring:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-   **User Registration** - Secure signup with validation
+-   **User Login** - JWT-based authentication with refresh tokens
+-   **Session Management** - Secure token storage and refresh mechanisms
+-   **Protected Routes** - Route protection on both frontend and backend
+-   **User State Management** - Centralized state management using Redux
+-   **Security Best Practices** - Password hashing, token validation, CORS configuration, and secure cookie handling
 
-### `npm test`
+### Technology Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Backend
 
-### `npm run build`
+-   **Express.js** - Web application framework for Node.js
+-   **MongoDB** with **Mongoose** - Database and ODM for data modeling
+-   **JSON Web Tokens (JWT)** - Secure token-based authentication
+-   **bcrypt** - Password hashing and encryption
+-   **cookie-parser** - Cookie parsing middleware
+-   **CORS** - Cross-Origin Resource Sharing configuration
+-   **validator** - Input validation and sanitization
+-   **dotenv** - Environment variable management
+-   **Babel** - JavaScript compiler for modern ES6+ syntax
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   **React** - UI library for building user interfaces
+-   **Redux Toolkit** - State management library
+-   **React Router** - Client-side routing
+-   **Axios** - HTTP client for API requests
+-   **React Redux** - React bindings for Redux
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Key Features
 
-### `npm run eject`
+-   ✅ **Complete Authentication Flow** - Signup, login, logout, and session management
+-   ✅ **JWT Token Management** - Access tokens and refresh tokens with automatic renewal
+-   ✅ **Secure Password Handling** - Bcrypt hashing with salt rounds
+-   ✅ **Protected Routes** - Both client-side and server-side route protection
+-   ✅ **State Management** - Centralized user and token state with Redux
+-   ✅ **Error Handling** - Comprehensive error handling and user feedback
+-   ✅ **CORS Configuration** - Secure cross-origin requests
+-   ✅ **Session Persistence** - Token storage in HTTP-only cookies and localStorage
+-   ✅ **Input Validation** - Server-side validation using validator library
+-   ✅ **Modern JavaScript** - ES6+ syntax with Babel transpilation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+jwt-authentication-express.js-react-redux/
+├── backend/          # Express.js server
+│   ├── config/      # Database, CORS, environment configuration
+│   ├── controller/  # Request handlers (signup, signin, signout)
+│   ├── middleware/  # Authentication, error handling, CORS middleware
+│   ├── models/      # MongoDB models (Users, Sessions)
+│   ├── routes/      # API route definitions
+│   └── util/        # Utility functions (auth helpers, error classes)
+└── frontend/        # React application
+    ├── src/
+    │   ├── api/     # Axios configuration
+    │   ├── auth/    # Authentication hooks and listeners
+    │   ├── features/ # Redux slices and thunks
+    │   ├── store/   # Redux store configuration
+    │   ├── ui/      # React components
+    │   └── users/   # User-related components
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+-   Node.js (v14 or higher)
+-   MongoDB (local or cloud instance)
+-   npm or yarn
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repository:
 
-### Code Splitting
+```bash
+git clone https://github.com/akladyous/jwt-authentication-express.js-react-redux.git
+cd jwt-authentication-express.js-react-redux
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Install backend dependencies:
 
-### Analyzing the Bundle Size
+```bash
+cd backend
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Install frontend dependencies:
 
-### Making a Progressive Web App
+```bash
+cd ../frontend
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. Configure environment variables:
 
-### Advanced Configuration
+    - Create a `.env` file in the `backend` directory
+    - Add your MongoDB connection string, JWT secrets, and other configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+5. Start the backend server:
 
-### Deployment
+```bash
+cd backend
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+6. Start the frontend development server:
 
-### `npm run build` fails to minify
+```bash
+cd frontend
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The application will be available at `http://localhost:3000` (frontend) and your configured backend port.
+
+## Security Features
+
+This project implements multiple layers of security:
+
+-   **Password Encryption** - Passwords are hashed using bcrypt before storage
+-   **JWT Tokens** - Secure token-based authentication with expiration
+-   **Refresh Tokens** - Automatic token refresh mechanism
+-   **HTTP-Only Cookies** - Secure cookie storage for tokens
+-   **CORS Protection** - Configured CORS policies
+-   **Input Validation** - Server-side validation to prevent malicious input
+-   **Route Protection** - Middleware-based route protection
+-   **Error Handling** - Secure error messages without exposing sensitive information
+
+## License
+
+MIT License - see LICENSE file for details
+
+## Author
+
+Boula Akladyous
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
