@@ -1,0 +1,22 @@
+{
+    "techstack": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JSON Web Token (JWT)",
+        "express-session",
+        "CORS",
+        "React.js",
+        "Redux Toolkit",
+        "React Router DOM",
+        "Axios",
+        "validate.js",
+        "Jest"
+    ],
+    "highlights": [
+        "Architected a full-stack authentication system using Express.js, React, and MongoDB, implementing end-to-end signup, login, logout, and session management with JWT access and refresh tokens.",
+        "Implemented secure credential handling with bcrypt password hashing, server-side input validation, and middleware-based route protection on both backend APIs and frontend routes.",
+        "Integrated token lifecycle management with HTTP-only cookies and automatic refresh flows, ensuring persistent and secure user sessions across page reloads.",
+        "Designed a modular frontend architecture using React, Redux Toolkit, and React Router to centralize user state, authentication logic, and protected navigation flows."
+    ]
+}
